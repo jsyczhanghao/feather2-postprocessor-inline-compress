@@ -1,20 +1,19 @@
 'use strict';
 
-var INLINE_COMPRESS_REG = /(<(script|style)([\s\S]+?\binline-compress\b[^>]*)>)([\s\S]*?)<\/\2>/g;
+var INLINE_COMPRESS_REG = /<(script|style)( [^>]*?\b(?:(?:feather|data)-)?inline-compress\b[^>]*)>([\s\S]*?)<\/\1>/g;
 var ug = require('uglify-js'), clean = require('clean-css');
 
 module.exports = function(content, file, conf){
     if(file.isHtmlLike){
-        var tmp;
 
-        content = content.replace(INLINE_COMPRESS_REG, function(_0, _1, _2, _3, _4){
-            if(_2 == 'script'){
-                _4 = ug.minify(_4, {fromString: true}).code;
+        content = content.replace(INLINE_COMPRESS_REG, function(_0, _1, _2, _3){
+            if(_1 == 'script'){
+                _3 = ug.minify(_3, {fromString: true}).code;
             }else{
-                _4 = clean.process(_4, {processImport: false});
+                _3 = clean.process(_3, {processImport: false});
             }
 
-            return '<' + _2 + _3.replace(/\s*inline-compress\s*/, ' ').replace(/\s*$/, '') + '>' + _4 + '</' + _2 + '>';
+            return '<' + _1 + _2.replace(/\s*(?:(?:feather|data)-)?inline-compress\s*/, ' ').replace(/\s*$/, '') + '>' + _3 + '</' + _1 + '>';
         });
     }
 
