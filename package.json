@@ -1,0 +1,24 @@
+{
+  "name": "feather2-postprocessor-inline-compress",
+  "version": "1.0.0",
+  "description": "feather2 inline compress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsyczhanghao/feather2-postprocessor-inline-compress.git"
+  },
+  "keywords": [
+    "feather2",
+    "inline compress"
+  ],
+  "author": {
+    "name": "jsyczhanghao@sina.com"
+  },
+  "dependencies": {
+    "uglify-js": "2.4.15",
+    "clean-css": "1.1.7"
+  }
+}
