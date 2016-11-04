@@ -1,8 +1,5 @@
 feather2-postprocessor-inline-compress
 ======================
-
-#简介
-
 feather2-postprocessor-inline-compress是[feather2](http://github.com/feather-team/feather2)中的一个内联样式以及js进行压缩的插件，它可同样作为[fis](http://fis.baidu.com/)的插件进行使用。
 
 
