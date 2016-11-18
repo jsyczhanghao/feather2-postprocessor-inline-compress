@@ -16,13 +16,13 @@ feather.config.get('postprocessor').push('inline-compress');
 
 index.html
 ```html
-<script inline-compress>
+<script compress>
 (function(window){
 console.log(123);
 })(window);
 </script>
 
-<style type="text/css" inline-compress>
+<style type="text/css" compress>
 div{
   font-size: 12px;
   font-weight: bold;
